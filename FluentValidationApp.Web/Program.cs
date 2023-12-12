@@ -2,6 +2,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using FluentValidationApp.Web.FluentValidators;
 using FluentValidationApp.Web.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 
@@ -17,7 +18,10 @@ builder.Services.AddSingleton<IValidator<Customer>, CustomerValidator>();
 //    options.RegisterValidatorsFromAssemblyContaining<CustomerValidator>();
 //});
 
-
+builder.Services.Configure<ApiBehaviorOptions>(options =>
+{
+    options.SuppressModelStateInvalidFilter=true;//apide hata mesajlarýný kendimiz yazacaðýz.
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {

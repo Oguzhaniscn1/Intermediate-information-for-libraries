@@ -17,6 +17,12 @@ namespace FluentValidationApp.Web.FluentValidators
             {
                 return DateTime.Now.AddYears(-18)>=x;
             }).WithMessage("yaşınız 18 den büyük olmalıdır.");
+
+
+            RuleForEach(x => x.Address).SetValidator(new AddressValidator()); //address validatorü customer validatore bağladık controllerda customeri çağırınca adress de çalışmış olacak.
+
+
+
         }
 
 

@@ -10,5 +10,8 @@ namespace FluentValidationApp.Web.Models
         public int Age { get; set; }
 
         public DateTime? BirthDay { get; set; }
+
+        //customer.address[0,1,2].ıd,postcode
+        public IList<Address> Address { get; set; }
     }
 }
