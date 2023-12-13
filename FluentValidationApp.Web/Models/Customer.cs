@@ -15,5 +15,16 @@ namespace FluentValidationApp.Web.Models
         public IList<Address> Address { get; set; }
 
         public Gender Gender { get; set; }
+
+        public CreditCard CreditCard { get; set; }
+
+        public string GetFullName()//get kullanırsak otomatik olarak eşleşme gerçekleşecek kullanmaz isek mapping sınıfında ile belirtmemiz gerekli
+        {
+            return $"{Name}-{Email}-{Age}";
+        }
+
+
+
+
     }
 }
