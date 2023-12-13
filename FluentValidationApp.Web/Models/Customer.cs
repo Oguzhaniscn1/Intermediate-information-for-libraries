@@ -13,5 +13,7 @@ namespace FluentValidationApp.Web.Models
 
         //customer.address[0,1,2].ıd,postcode
         public IList<Address> Address { get; set; }
+
+        public Gender Gender { get; set; }
     }
 }
